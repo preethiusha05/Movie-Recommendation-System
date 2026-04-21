@@ -8,14 +8,14 @@ import faiss
 from sklearn.neighbors import NearestNeighbors
 from sklearn.decomposition import TruncatedSVD, NMF
 
-# =============================
+
 # Page Config
-# =============================
+
 st.set_page_config(page_title=" Movie Recommender", layout="wide")
 
-# =============================
+
 # Load Data
-# =============================
+
 @st.cache_data
 def load_data():
     movies = pd.read_csv("movies.csv")
@@ -24,9 +24,9 @@ def load_data():
 
 movies, ratings = load_data()
 
-# =============================
+
 # Content-Based (Embeddings)
-# =============================
+
 @st.cache_resource
 def load_embeddings():
     model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -36,9 +36,9 @@ def load_embeddings():
 
 embeddings = load_embeddings()
 
-# =============================
+
 # FAISS
-# =============================
+
 @st.cache_resource
 def build_faiss(embeddings):
     index = faiss.IndexFlatL2(embeddings.shape[1])
@@ -47,9 +47,9 @@ def build_faiss(embeddings):
 
 faiss_index = build_faiss(embeddings)
 
-# =============================
+
 # User-Movie Matrix
-# =============================
+
 @st.cache_resource
 def build_matrix():
     return ratings.pivot_table(
@@ -60,9 +60,9 @@ def build_matrix():
 
 user_movie = build_matrix()
 
-# =============================
+
 # KNN
-# =============================
+
 @st.cache_resource
 def train_knn():
     knn = NearestNeighbors(metric='cosine')
@@ -71,9 +71,9 @@ def train_knn():
 
 knn_model = train_knn()
 
-# =============================
+
 # SVD (Reconstruction)
-# =============================
+
 @st.cache_resource
 def train_svd():
     svd = TruncatedSVD(n_components=50, random_state=42)
@@ -83,9 +83,9 @@ def train_svd():
 
 svd_matrix = train_svd()
 
-# =============================
+
 # NMF (Reconstruction)
-# =============================
+
 @st.cache_resource
 def train_nmf():
     nmf = NMF(n_components=50, init='random', random_state=42, max_iter=200)
@@ -95,9 +95,9 @@ def train_nmf():
 
 nmf_matrix = train_nmf()
 
-# =============================
+
 # Recommendation Functions
-# =============================
+
 
 def content_recommend(idx, top_k):
     query = embeddings[idx].reshape(1, -1)
@@ -188,15 +188,14 @@ def hybrid_recommend(idx, user_id, top_k):
     return result[:top_k]
 
 
-# =============================
+
 # SIDEBAR
-# =============================
 st.sidebar.title(" Navigation")
 page = st.sidebar.radio("Go to", [" Home", " Recommendation", " EDA", " About"])
 
-# =============================
+
 # HOME
-# =============================
+
 if page == " Home":
     st.title(" Movie Recommendation System")
 
@@ -231,9 +230,9 @@ if page == " Home":
 
     st.success(" Go to Recommendation tab to try!")
 
-# =============================
+
 # RECOMMENDATION
-# =============================
+
 elif page == " Recommendation":
 
     st.title(" Get Recommendations")
@@ -282,9 +281,9 @@ elif page == " Recommendation":
                 </div>
                 """, unsafe_allow_html=True)
 
-# =============================
+
 # EDA
-# =============================
+
 elif page == " EDA":
     st.title(" Data Analysis")
 
@@ -307,9 +306,9 @@ elif page == " EDA":
     chart = most[['title','count']].head(10).set_index('title')
     st.bar_chart(chart)
 
-# =============================
+
 # ABOUT
-# =============================
+
 elif page == " About":
     st.title(" About Project")
 
