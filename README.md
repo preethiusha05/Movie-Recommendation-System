@@ -19,12 +19,12 @@ This system:
 
 #  Features
 
-✔ Content-Based Recommendations (NLP + FAISS)
-✔ Collaborative Filtering (KNN, SVD, NMF)
-✔ Hybrid Recommendation System
-✔ Fast similarity search using FAISS
-✔ Interactive UI using Streamlit
-✔ Data visualization (EDA)
+* Content-Based Recommendations (NLP + FAISS)
+* Collaborative Filtering (KNN, SVD, NMF)
+* Hybrid Recommendation System
+* Fast similarity search using FAISS
+* Interactive UI using Streamlit
+*  Data visualization (EDA)
 
 ---
 
