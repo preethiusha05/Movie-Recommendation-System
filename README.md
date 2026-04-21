@@ -3,7 +3,7 @@
 An AI-powered Movie Recommendation System built using **Machine Learning, NLP, and Vector Embeddings**.
 This project recommends movies using **Content-Based, Collaborative, and Hybrid approaches**.
 
----
+
 
 #  Project Description
 
