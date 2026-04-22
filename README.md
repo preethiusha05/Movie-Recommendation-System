@@ -6,9 +6,7 @@ This project recommends movies using **Content-Based, Collaborative, and Hybrid 
 ---
 
 #  Project Description
-
 This system:
-
 * Uses **content-based filtering** with NLP embeddings
 * Uses **collaborative filtering** based on user ratings
 * Combines both into a **hybrid recommendation system**
@@ -54,7 +52,6 @@ This system:
 * Load movie and rating datasets using Pandas
 * Clean and prepare data
 
----
 ## 2 Content-Based Filtering
  Combine title + genres
  Convert text into embeddings
@@ -101,24 +98,27 @@ This system:
  * Collaborative filtering (KNN + SVD + NMF)
  * Removes duplicates and improves recommendation quality
 
- ## Training Summary
+## Similarity Metrics Used
+
+* Cosine Similarity → used in KNN
+* L2 Distance (Euclidean) → used in FAISS
+
+## Training Summary
  * Models are trained on MovieLens dataset
  * User-movie interactions are converted into a matrix
  * ML models learn:
  * User preferences
  * Movie similarities
  * Predictions are generated dynamically during runtime
-
+---
 ##  Streamlit UI
 
-* Sidebar navigation:
-
+## Sidebar navigation:
   * Home
   * Recommendation
   * EDA
   * About
-  * User inputs:
-
+ ## User inputs:
   * Select movie
   * Enter user ID
   * Choose method
@@ -132,7 +132,7 @@ This system:
 
 ```bash
 git clone https://github.com/preethiusha05/Movie-Recommendation-System
-cd "C:\Movie_Recommend_Project"
+cd Movie-Recommendation-System
 ```
 
 ## Step 2: Install Dependencies
