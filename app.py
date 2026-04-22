@@ -190,6 +190,7 @@ def hybrid_recommend(idx, user_id, top_k):
 
 
 # SIDEBAR
+
 st.sidebar.title(" Navigation")
 page = st.sidebar.radio("Go to", [" Home", " Recommendation", " EDA", " About"])
 
@@ -276,8 +277,8 @@ elif page == " Recommendation":
                             margin:10px;
                             text-align:center;
                             color:white;">
-                    🎬 <b>{movie['title']}</b><br>
-                    ⭐ Rating: {avg_rating}
+                     <b>{movie['title']}</b><br>
+                     Rating: {avg_rating}
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -368,10 +369,10 @@ elif page == " About":
     • Movie similarity  
     • Historical ratings  
 
-    ---
+    
 
-     Built with  using AI & Machine Learning
+     
     """)
 # Footer
 st.markdown("---")
-st.markdown(" Built with  using AI & ML")
+st.markdown("Built with using AI & Machine Learning")
