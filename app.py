@@ -152,7 +152,7 @@ def nmf_recommend(user_id, top_k):
 
     return movies[movies['movieId'].isin(movie_ids)].to_dict('records')
 
-
+# Collaborative Function
 def collaborative_recommend(user_id, top_k):
     knn_res = knn_recommend(user_id, top_k)
     svd_res = svd_recommend(user_id, top_k)
