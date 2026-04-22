@@ -188,6 +188,7 @@ def hybrid_recommend(idx, user_id, top_k):
     return result[:top_k]
 
 
+# Streamlit UI
 
 # SIDEBAR
 
@@ -344,14 +345,6 @@ elif page == " About":
 
     ---
 
-    ##  Dataset Used
-
-    ✔ MovieLens Dataset  
-    • movies.csv  
-    • ratings.csv  
-
-    ---
-
     ##  How It Works
 
     1. Convert movies into embeddings using NLP  
@@ -365,6 +358,7 @@ elif page == " About":
     ##  Objective
 
     To recommend movies based on:
+                
     • User preferences  
     • Movie similarity  
     • Historical ratings  
