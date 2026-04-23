@@ -201,34 +201,37 @@ page = st.sidebar.radio("Go to", [" Home", " Recommendation", " EDA", " About"])
 if page == " Home":
     st.title(" Movie Recommendation System")
 
-    st.markdown("##  Project Overview")
+    # Add image here
+    st.image("movie.png", width=600)
 
-    col1, col2 = st.columns(2)
+
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.markdown("""
-        ###  Content-Based
-        • NLP (Sentence Transformers)  
-        • Movie similarity (title + genres)  
-        """)
-
-        st.markdown("""
-        ###  Collaborative Filtering
-        • Based on user ratings  
-        • Learns user preferences  
+        #### Content-Based
+        - NLP embeddings  
+        - Movie similarity  
+        - Title + genres  
         """)
 
     with col2:
         st.markdown("""
-        ###  Hybrid Model
-        • Combines both methods  
-        • Better recommendations  
+        #### Collaborative
+        - User rating data  
+        - Learns preferences  
+        - KNN, SVD, NMF  
         """)
 
+    with col3:
         st.markdown("""
-        ###  FAISS
-        • Fast similarity search  
+        #### Hybrid Model
+        - Combines methods  
+        - Better accuracy  
+        - Balanced results  
         """)
+
+    st.markdown("---")
 
     st.success(" Go to Recommendation tab to try!")
 
@@ -358,7 +361,7 @@ elif page == " About":
     ##  Objective
 
     To recommend movies based on:
-                
+    
     • User preferences  
     • Movie similarity  
     • Historical ratings  
@@ -367,6 +370,3 @@ elif page == " About":
 
      
     """)
-# Footer
-st.markdown("---")
-st.markdown("Built with using AI & Machine Learning")
