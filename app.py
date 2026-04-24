@@ -326,24 +326,24 @@ elif page == " About":
 
     ##  Technologies Used
 
-    ✔ **Natural Language Processing (NLP)**  
+    Natural Language Processing (NLP)  
     • Sentence Transformers (all-MiniLM-L6-v2)  
     • Converts movie data into embeddings  
 
-    ✔ **Content-Based Filtering**  
+    Content-Based Filtering  
     • Recommends movies based on similarity (title + genres)  
 
-    ✔ **Collaborative Filtering**  
+    Collaborative Filtering  
     • Uses user rating data  
-    • Trained using **KNN, Truncated SVD, and NMF models**  
+    • Trained using KNN, Truncated SVD, and NMF models  
 
-    ✔ **Hybrid Recommendation System**  
+    Hybrid Recommendation System  
     • Combines content-based and collaborative filtering  
 
-    ✔ **FAISS (Fast Similarity Search)**  
+    FAISS (Fast Similarity Search)  
     • Efficient nearest neighbor search  
 
-    ✔ **Streamlit**  
+    Streamlit 
     • Interactive web application UI  
 
     ---
